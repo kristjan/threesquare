@@ -1,6 +1,8 @@
 Threesquare::Application.routes.draw do
-  
-  resources :checkins
+
+  resources :checkins do
+    resources :foods
+  end
 
   resource :user
 
