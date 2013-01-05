@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103111300) do
+ActiveRecord::Schema.define(:version => 20130105202926) do
+
+  create_table "checkins", :force => true do |t|
+    t.integer  "user_id",       :null => false
+    t.string   "venue_id",      :null => false
+    t.string   "foursquare_id", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "checkins", ["user_id", "venue_id"], :name => "index_checkins_on_user_id_and_venue_id"
+
 
   create_table "foursquare_users", :force => true do |t|
     t.string   "foursquare_id"

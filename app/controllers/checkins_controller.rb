@@ -5,7 +5,7 @@ class CheckinsController < ApplicationController
     checkin = JSON.parse(params['checkin'])
     # TODO: verify push secret
     user = FoursquareUser.find_by_foursquare_id(checkin['user']['id'])
-    user.client.create_checkin_reply(checkin['id'], text: "hello world!")
+    user.check_in(checkin)
     return head :ok
   end
 end

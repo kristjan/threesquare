@@ -1,10 +1,19 @@
 class FoursquareUser < ActiveRecord::Base
+  has_many :checkins, :foreign_key => :user_id
+
   def name
     client.user_name
   end
 
   def client
     @client ||= FoursquareClient.new(access_token)
+  end
+
+  def check_in(foursquare_checkin)
+     checkins.create(
+      :venue_id      => foursquare_checkin["venue"]["id"],
+      :foursquare_id => foursquare_checkin["id"]
+    )
   end
 
   class << self
