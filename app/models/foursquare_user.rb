@@ -1,5 +1,6 @@
 class FoursquareUser < ActiveRecord::Base
   has_many :checkins, :foreign_key => :user_id
+  has_many :foods, :through => :checkins
 
   def name
     client.user_name
