@@ -8,7 +8,5 @@ class Checkin < ActiveRecord::Base
     user.client.create_checkin_reply(foursquare_id, text: "hello world!")
   end
 
-  after_create do |checkin|
-    checkin.reply
-  end
+  after_commit :reply, :on => :create
 end
