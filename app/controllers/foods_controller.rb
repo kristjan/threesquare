@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(params[:food])
     if @food.save
-      render :text => "Got it!"
+      redirect_to params[:redirect_url] || root_path
     else
       render :json => @food.errors
     end
