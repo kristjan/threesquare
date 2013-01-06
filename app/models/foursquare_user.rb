@@ -17,6 +17,10 @@ class FoursquareUser < ActiveRecord::Base
     )
   end
 
+  def foods_at(venue_id)
+    foods.where(:checkins => {:venue_id => venue_id})
+  end
+
   class << self
     def find_or_create_by_access_token(access_token)
       client = FoursquareClient.new(access_token)

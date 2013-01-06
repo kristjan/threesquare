@@ -13,14 +13,14 @@ class Checkin < ActiveRecord::Base
   end
 
   def reply_message
-    if foods.empty?
+    foods_at_venue = user && user.foods_at(venue_id).order(:id)
+    if foods_at_venue.blank?
       "Something smells good! What did you order?"
     else
-      last = foods.last
+      last = foods_at_venue.last
       <<-EOS.squish
-        You've eaten #{foods.count} things here.
-        Last time, you thought the <strong>#{last.description}</strong>
-        was <strong>#{last.rating_as_emotion}</strong>.
+        You've eaten #{foods_at_venue.count} things here. Last time, you
+        thought the #{last.description} was #{last.rating_as_emotion}.
       EOS
     end
   end
