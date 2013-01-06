@@ -1,17 +1,19 @@
-<h1>ThreeSquare</h1>
-
 <%= form_for [@checkin, @food] do |f| %>
-  <div>
+  <div class="description">
     <%= f.label :description, "What did you order?" %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :placeholder => "Pizza..." %>
   </div>
-  <div>
-    <h2>How did you like it?</h2>
-    <%= f.radio_button :rating, -1 %>
-    <%= f.label :rating, "Bad", :value => -1 %>
-    <%= f.radio_button :rating, 0 %>
-    <%= f.label :rating, "Fine", :value => 0 %>
-    <%= f.radio_button :rating, 1 %>
-    <%= f.label :rating, "Great", :value => 1 %>
+  <div class="rating">
+    <label>How did you like it?</label>
+    <%= f.label :rating, :value => -1, :class => "bad smiley" do %>
+      <%= f.radio_button :rating, -1 %>
+    <% end %>
+    <%= f.label :rating, :value => 0, :class => "fine smiley" do %>
+      <%= f.radio_button :rating, 0 %>
+    <% end %>
+    <%= f.label :rating, :value => 1, :class => "great smiley" do %>
+      <%= f.radio_button :rating, 1 %>
+    <% end %>
   </div>
+  <%= f.submit "Save", :class => "yellow button" %>
 <% end %>

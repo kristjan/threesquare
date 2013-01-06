@@ -1,0 +1,68 @@
+// Place all the styles related to the Foods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #F5F5F5 url(<%= asset_path("dust_bg.jpg") %>) repeat left top;
+}
+
+form {
+  width: 90%;
+  padding: 0 5%;
+
+  div {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  input[type=text] {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    box-shadow: inset 0px 1px 2px #999;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #041B5B;
+    font-size: 24px;
+    text-transform: uppercase;
+
+    &.smiley {
+      display: inline-block;
+      width: 107px;
+      height: 107px;
+      background: transparent url(<%= asset_path("smileys_sm.png") %>) no-repeat;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.bad {
+        background-position: 0px 0px;
+        &:hover, &.selected { background-position: 0px -106px; }
+      }
+
+      &.fine {
+        background-position: -144px 0px;
+        &:hover, &.selected { background-position: -144px -106px; }
+      }
+
+      &.great {
+        background-position: -288px 0px;
+        &:hover, &.selected { background-position: -288px -106px; }
+      }
+
+      input[type=radio] {
+        display: none;
+      }
+    }
+  }
+}
+

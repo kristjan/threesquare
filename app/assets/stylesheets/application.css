@@ -11,3 +11,34 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 0;
+
+  border: none;
+  border-radius: 10px;
+
+  color: #414040;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+.yellow {
+  background: #fad953; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fad953 0%, #d1b440 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fad953), color-stop(100%,#d1b440)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fad953 0%,#d1b440 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fad953 0%,#d1b440 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fad953 0%,#d1b440 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fad953 0%,#d1b440 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fad953', endColorstr='#d1b440',GradientType=0 ); /* IE6-9 */
+}
