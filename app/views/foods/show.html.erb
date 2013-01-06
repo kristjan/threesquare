@@ -1,0 +1,8 @@
+<div class="show">
+  <%= image_tag(@food.smiley(true)) %>
+  <p>
+    The <strong><%= @food.description %></strong> here is
+    <strong><%= @food.rating_as_emotion %></strong>.
+  </p>
+  <%= link_to "Done", @redirect, :class => "yellow button" %>
+</div>

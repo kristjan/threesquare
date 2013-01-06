@@ -17,6 +17,7 @@ body {
 }
 
 .button {
+  display: block;
   width: 100%;
   padding: 10px 0;
 
@@ -28,7 +29,10 @@ body {
   font-weight: bold;
   line-height: 1.2em;
   letter-spacing: 1px;
+
+  text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 
