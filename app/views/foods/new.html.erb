@@ -1,4 +1,5 @@
 <%= form_for [@checkin, @food] do |f| %>
+  <%= f.hidden_field :checkin_id %>
   <div class="description">
     <%= f.label :description, "What did you order?" %>
     <%= f.text_field :description, :placeholder => "Pizza..." %>
