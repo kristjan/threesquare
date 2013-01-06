@@ -36,27 +36,23 @@ form {
 
     &.smiley {
       display: inline-block;
-      width: 107px;
-      height: 107px;
-      background: transparent url(<%= asset_path("smileys_sm.png") %>) no-repeat;
+      width: 30%;
+
+      img {
+        width: 100%;
+        display: block;
+        &.selected { display: none; }
+      }
+
+      &.selected, &:hover {
+        img {
+          display: none;
+          &.selected { display: block; }
+        }
+      }
 
       &:hover {
         cursor: pointer;
-      }
-
-      &.bad {
-        background-position: 0px 0px;
-        &:hover, &.selected { background-position: 0px -106px; }
-      }
-
-      &.fine {
-        background-position: -144px 0px;
-        &:hover, &.selected { background-position: -144px -106px; }
-      }
-
-      &.great {
-        background-position: -288px 0px;
-        &:hover, &.selected { background-position: -288px -106px; }
       }
 
       input[type=radio] {

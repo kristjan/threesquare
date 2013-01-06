@@ -5,14 +5,12 @@
   </div>
   <div class="rating">
     <label>How did you like it?</label>
-    <%= f.label :rating, :value => -1, :class => "bad smiley" do %>
-      <%= f.radio_button :rating, -1 %>
-    <% end %>
-    <%= f.label :rating, :value => 0, :class => "fine smiley" do %>
-      <%= f.radio_button :rating, 0 %>
-    <% end %>
-    <%= f.label :rating, :value => 1, :class => "great smiley" do %>
-      <%= f.radio_button :rating, 1 %>
+    <% [[:bad, -1], [:fine, 0], [:great, 1]].each do |feeling, value| %>
+      <%= f.label :rating, :value => value, :class => "#{feeling} smiley" do %>
+        <%= image_tag "smiley_#{feeling}.png" %>
+        <%= image_tag "smiley_#{feeling}_yellow.png", :class => "selected" %>
+        <%= f.radio_button :rating, value %>
+      <% end %>
     <% end %>
   </div>
   <%= f.submit "Save", :class => "yellow button" %>
